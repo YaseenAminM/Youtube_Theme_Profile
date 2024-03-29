@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/react-icons"></script>
+    <title>Yaseen Amin</title>
+    <link rel="shortcut icon" href="./img/yt.png" type="image/x-icon" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+        font-family: "Roboto", sans-serif;
+      }
+
+      body {
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE 10+ */
+        user-select: none; /* Standard syntax */
+      }
+
+      .container {
+        background-color: #0f0f0f;
+        height: 100vh;
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      .btn {
+        height: fit-content;
+        background-color: #ff0000;
+        color: #ffff;
+        font-size: 1.5rem;
+        border: none;
+        padding: 0.8rem 1.4rem;
+        border-radius: 0.4rem;
+        transition: all 0.1s ease-in;
+        transform: scale(1.2);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .btn:hover {
+        /* transform: scale(1.1); */
+        background-color: #e60000;
+      }
+
+      /* 0.12 0.32 */
+
+      ion-icon {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      h1 {
+        font-size: 5.6rem;
+        font-weight: 700;
+        color: #ff0000;
+      }
+      h5 {
+        font-weight: 300;
+        color: #ffff;
+        font-size: 2rem;
+        text-align: center;
+        letter-spacing: 0.4rem;
+        margin-bottom: 2rem;
+      }
+
+      .profilepic {
+        border: 1.2rem solid #ff0000;
+        border-radius: 100rem;
+      }
+
+      .credites {
+        font-size: 1.6rem;
+        color: #e60000;
+        position: absolute;
+        bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        class="profilepic"
+        src="https://media.licdn.com/dms/image/D4D03AQHUaJ6MSsy31w/profile-displayphoto-shrink_200_200/0/1711642963815?e=1717027200&v=beta&t=WHdWE-Nn91UMwhkP8eksha--YUdaD_TV1VFxD4UXf2U"
+        alt=""
+      />
+      <div>
+        <h1>Yaseen Amin</h1>
+        <h5>Front-End Developer</h5>
+      </div>
+      <button class="btn">
+        <ion-icon name="notifications"></ion-icon
+        ><span class="icon-text">Subscribe</span>
+      </button>
+      <p class="credites">Copyright © 2024 | Design By <b>Yaseen Amin</b></p>
+    </div>
+    <script>
+      const btn = document.querySelector(".btn");
+      const icon = document.querySelector("ion-icon");
+      const iconTextt = document.querySelector(".icon-text");
+
+      btn.addEventListener("click", function () {
+        const currentName = icon.getAttribute("name");
+
+        console.log(currentName);
+        icon.setAttribute(
+          "name",
+          `notifications${currentName === "notifications" ? "-off" : ""}`
+        );
+        btn.style.backgroundColor = `${
+          currentName === "notifications" ? "#b30000 " : "#e60000 "
+        }`;
+        iconTextt.textContent = `${
+          currentName === "notifications" ? "Subscribed" : "Subscribe"
+        }`;
+
+        console.log(currentName);
+      });
+    </script>
+  </body>
+</html>
